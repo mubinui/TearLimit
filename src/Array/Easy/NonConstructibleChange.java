@@ -15,27 +15,16 @@ public class NonConstructibleChange {
         // Write your code here.
 
         Arrays.sort(coins);
-        HashSet<Integer> memory = new HashSet<>();
-        for(int i : coins) memory.add(i);
         int change = 1;
 
         for (int i = 0; i<coins.length; i++) {
-            int temp = coins[i];
             if(change<coins[i] ){
-                if  (change<temp && ! memory.contains(temp-1)){
-
-                    return change;
-                }
-
+                return change;
 
 
             }
             change += coins[i];
-
         }
-
-
-
 
         return change;
     }
